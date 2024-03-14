@@ -35,10 +35,13 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("largest")) {
-    var arr = query.toLowerCase().split(" ");
-    var i = arr.indexOf("plus");
+    var i = query.toLowerCase().indexOf(":") + 1;
+    var str = query.toLowerCase().substring(i,  query.length - 1);
+    var arr1 = str.split(",").map(function(item) {
+      return parseInt(item);
+    });
     return (
-      arr[i - 1] + "+" + arr[i + 1]
+      Math.max(...arr1) + ""
     );
   }
 
