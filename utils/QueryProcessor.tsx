@@ -72,6 +72,17 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("largest")) {
+    var i = query.toLowerCase().indexOf(":") + 1;
+    var str = query.toLowerCase().substring(i,  query.length - 1);
+    var arr2 = str.split(",").filter(function(item) {
+      return isPrime(parseInt(item));
+    });
+    return (
+      arr2 + ""
+    );
+  }
+
 
 
   return "";
