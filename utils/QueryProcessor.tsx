@@ -34,6 +34,15 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("minus")) {
+    var arr = query.toLowerCase().split(" ");
+    var i = arr.indexOf("minus");
+    var str = arr[i + 1]
+    return (
+      (parseInt(arr[i - 1]) - parseInt(str)) + ""
+    );
+  }
+
   if (query.toLowerCase().includes("multiplied by")) {
     var arr = query.toLowerCase().split(" ");
     var i = arr.indexOf("multiplied");
@@ -57,4 +66,14 @@ export default function QueryProcessor(query: string): string {
 
 
   return "";
+}
+
+function isPrime(num: number): boolean {
+  for (let i = 2; i < num; i++) {
+      if (num % i === 0) {
+          return false;
+      }
+  }
+
+  return true;
 }
