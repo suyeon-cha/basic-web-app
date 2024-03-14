@@ -25,4 +25,12 @@ describe("QueryProcessor", () => {
             "Your Andrew ID is: suyeonc"
           ));
     });
+
+    test('largest num', () => {
+        const query = "largest: 4, 5, 6 ";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "6"
+          ));
+    });
 });

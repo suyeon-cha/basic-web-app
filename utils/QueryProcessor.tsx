@@ -34,6 +34,15 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("multiplied by")) {
+    var arr = query.toLowerCase().split(" ");
+    var i = arr.indexOf("multiplied");
+    var str = arr[i + 2]
+    return (
+      (parseInt(arr[i - 1]) + parseInt(str)) + ""
+    );
+  }
+
   if (query.toLowerCase().includes("largest")) {
     var i = query.toLowerCase().indexOf(":") + 1;
     var str = query.toLowerCase().substring(i,  query.length - 1);
