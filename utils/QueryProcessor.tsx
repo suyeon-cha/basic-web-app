@@ -52,6 +52,15 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("power of")) {
+    var arr = query.toLowerCase().split(" ");
+    var i = arr.indexOf("to");
+    var str = arr[i + 4]
+    return (
+      (Math.pow(parseInt(arr[i - 1]), parseInt(str))) + ""
+    );
+  }
+
   if (query.toLowerCase().includes("largest")) {
     var i = query.toLowerCase().indexOf(":") + 1;
     var str = query.toLowerCase().substring(i,  query.length - 1);
