@@ -25,6 +25,14 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("plus")) {
+    var arr = query.toLowerCase().split(" ");
+    var i = arr.indexOf("plus");
+    return (
+      arr[i - 1] + "+" + arr[i + 1]
+    );
+  }
+
 
 
   return "";
