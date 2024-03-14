@@ -28,6 +28,15 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("plus")) {
     var arr = query.toLowerCase().split(" ");
     var i = arr.indexOf("plus");
+    var str = arr[i + 1]
+    return (
+      parseInt(arr[i - 1]) + "+" + parseInt(str.substring(0, str.length - 1))
+    );
+  }
+
+  if (query.toLowerCase().includes("largest")) {
+    var arr = query.toLowerCase().split(" ");
+    var i = arr.indexOf("plus");
     return (
       arr[i - 1] + "+" + arr[i + 1]
     );
