@@ -30,7 +30,7 @@ export default function QueryProcessor(query: string): string {
     var i = arr.indexOf("plus");
     var str = arr[i + 1]
     return (
-      parseInt(arr[i - 1]) + "+" + parseInt(str)
+      (parseInt(arr[i - 1]) + parseInt(str)) + ""
     );
   }
 
