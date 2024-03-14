@@ -33,4 +33,12 @@ describe("QueryProcessor", () => {
             "6"
           ));
     });
+
+    test('multiply', () => {
+        const query = "4 multiplied by 6";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "24"
+          ));
+    });
 });

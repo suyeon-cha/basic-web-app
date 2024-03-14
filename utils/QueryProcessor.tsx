@@ -39,7 +39,7 @@ export default function QueryProcessor(query: string): string {
     var i = arr.indexOf("multiplied");
     var str = arr[i + 2]
     return (
-      (parseInt(arr[i - 1]) + parseInt(str)) + ""
+      (parseInt(arr[i - 1]) * parseInt(str)) + ""
     );
   }
 
