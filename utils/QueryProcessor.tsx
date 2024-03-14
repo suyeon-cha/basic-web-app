@@ -29,6 +29,11 @@ export default function QueryProcessor(query: string): string {
     var arr = query.toLowerCase().split(" ");
     var i = arr.indexOf("plus");
     var str = arr[i + 1]
+    if (arr[i + 2].includes("plus")) {
+      return (
+        (parseInt(arr[i - 1]) + parseInt(str) + parseInt(arr[i + 3])) + ""
+      );
+    }
     return (
       (parseInt(arr[i - 1]) + parseInt(str)) + ""
     );

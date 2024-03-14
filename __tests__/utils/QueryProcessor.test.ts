@@ -41,4 +41,22 @@ describe("QueryProcessor", () => {
             "24"
           ));
     });
+
+    test('plus plus', () => {
+        const query = "4 plus 6 plus 4";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "14"
+          ));
+    });
+
+    test('prime', () => {
+        const query = "primes: 2, 5, 6, 7?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "2, 5, 7"
+          ));
+    });
 });
+
+
